@@ -1,18 +1,3 @@
-/*
-find the first and last int on each line
-concat them
-if the first digit is the last digit, repeat it
-
-1abc2
-pqr3stu8vwx
-a1b2c3d4e5f
-treb7uchet
-
-In this example, the calibration values of these four lines are 12, 38, 15, and 77. Adding these together produces 142.
-
-get the values for each line, sum them
-*/
-
 #![allow(dead_code)]
 
 use std::fs;
@@ -28,6 +13,8 @@ mod day_ten;
 mod day_three;
 mod day_two;
 mod day_12;
+mod day_13;
+mod day_14;
 
 fn read_file(filepath: &str) -> Result<String, Box<dyn std::error::Error>> {
     let contents = fs::read_to_string(filepath).unwrap();
@@ -155,6 +142,26 @@ fn day_12(filepath: &str) {
     println!("12:2 {:?}", two.unwrap());
 }
 
+fn day_13(filepath: &str) {
+    let file = read_file(filepath).unwrap();
+
+    let one = day_13::part_1(&file);
+    let two = day_13::part_2(&file);
+
+    println!("13:1 {:?}", one.unwrap());
+    println!("13:2 {:?}", two.unwrap());
+}
+
+fn day_14(filepath: &str) {
+    let file = read_file(filepath).unwrap();
+
+    let one = day_14::part_1(&file);
+    let two = day_14::part_2(&file);
+
+    println!("14:1 {:?}", one.unwrap());
+    println!("14:2 {:?}", two.unwrap());
+}
+
 fn main() {
     // day_one("01_input.txt");
     // day_two("02_input.txt");
@@ -167,5 +174,7 @@ fn main() {
     // day_nine("09_input.txt");
     // day_ten("10_input.txt");
     // day_11("11_input.txt");
-    day_12("12_input.txt");
+    // day_12("12_input.txt");
+    day_13("13_input.txt");
+    // day_14("14_input.txt");
 }
