@@ -26,6 +26,7 @@ pub fn part_1(file: &str) -> Option<usize> {
     let parsed_file = parse_file(file);
 
     let sum = parsed_file.iter().map(|stack|stack.iter().sum::<usize>()).sum();
+
     Some(sum)
 }
 
