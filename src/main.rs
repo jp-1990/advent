@@ -17,6 +17,8 @@ mod day_13;
 mod day_14;
 mod day_15;
 mod day_16;
+mod day_17;
+mod day_18;
 
 fn read_file(filepath: &str) -> Result<String, Box<dyn std::error::Error>> {
     let contents = fs::read_to_string(filepath).unwrap();
@@ -184,6 +186,26 @@ fn day_16(filepath: &str) {
     println!("16:2 {:?}", two.unwrap());
 }
 
+fn day_17(filepath: &str) {
+    let file = read_file(filepath).unwrap();
+
+    let one = day_17::part_1(&file);
+    let two = day_17::part_2(&file);
+
+    println!("17:1 {:?}", one.unwrap());
+    println!("17:2 {:?}", two.unwrap());
+}
+
+fn day_18(filepath: &str) {
+    let file = read_file(filepath).unwrap();
+
+    let one = day_18::part_1(&file);
+    let two = day_18::part_2(&file);
+
+    println!("18:1 {:?}", one.unwrap());
+    println!("18:2 {:?}", two.unwrap());
+}
+
 fn main() {
     // day_one("01_input.txt");
     // day_two("02_input.txt");
@@ -200,5 +222,7 @@ fn main() {
     // day_13("13_input.txt");
     // day_14("14_input.txt");
     // day_15("15_input.txt");
-    day_16("16_input.txt");
+    // day_16("16_input.txt");
+    // day_17("17_input.txt");
+    day_18("18_input.txt");
 }
